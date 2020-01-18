@@ -43,23 +43,16 @@ module.exports = {
 
     async update(request, response){
         
-        const dev = await Dev.findById(request.params.id);
-        // const post = await Post.findById(req.params.id);
+        let dev = await Dev.findById(request.params.id);
+        
         const { name, techs, latitude, longitude, avatar_url, bio } = request.body;
         const techsArray = parseStringAsArray(techs);
-        // console.log(request.body);
+        
         const location = {
             type:'Point',
             coordinates: [longitude, latitude],
         }
-        // dev = {
-        //     name,
-        //     avatar_url,
-        //     bio,
-        //     techs: techsArray,
-        //     location
-        // };
-    
+
         dev.name = name;
         dev.avatar_url = avatar_url;
         dev.bio = bio;
@@ -78,7 +71,7 @@ module.exports = {
         dev.remove();
 
         let result = dev.$isDeleted;
-        
+
         return response.json({result});
     }
 }
