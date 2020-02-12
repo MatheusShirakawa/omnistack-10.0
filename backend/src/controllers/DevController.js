@@ -46,7 +46,9 @@ module.exports = {
         let dev = await Dev.findById(request.params.id);
         
         const { name, techs, latitude, longitude, avatar_url, bio } = request.body;
-        const techsArray = parseStringAsArray(techs);
+
+        const lowTechs = techs.toLowerCase();
+        const techsArray = parseStringAsArray(lowTechs);
         
         const location = {
             type:'Point',
