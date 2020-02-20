@@ -3,7 +3,7 @@
 Creating the 'DevRadar' from the 'Semana Ominstack' by <a href="https://github.com/Rocketseat" target="_blank">Rocketseat</a> 
 
 
-### Tecnologies 
+## Tecnologies 
 
 - `ReactJS`
 - `React Native`
